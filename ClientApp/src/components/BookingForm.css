@@ -1,0 +1,157 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.dininfo-wrap {
+    width: 100%;
+    margin: auto;
+    height: 1199px;
+    max-width: 625px;
+    min-height: 625px;
+    position: relative;
+    background: #aaaaaa;
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+
+/* Style the header */
+.header-about {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 65px;
+    color: white;
+}
+
+
+/* Create two columns/boxes that floats next to each other */
+
+.h1-about {
+    text-align: center;
+    font-size: 65px;
+    margin-top: -16mm;
+}
+
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+    .body-about, header {
+        width: 100%;
+        height: auto;
+    }
+}
+
+input[type=number], select {
+    width: 100%;
+    color: #aaa;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+}
+
+input[type=tel], select {
+    width: 100%;
+    color: #aaa;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+}
+
+.others {
+    color: black;
+}
+
+.text {
+    color: #aaa;
+}
+
+.text-white {
+    color: white;
+}
+
+.cykel {
+    width: 100%;
+    color: #aaa;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+}
+
+input[type=email], select {
+    width: 100%;
+    color: #aaa;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+}
+
+input[type=date], select {
+    width: 100%;
+    color: #aaa;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+}
+
+input[type=text], select {
+    width: 100%;
+    color: #aaa;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #3f51b5;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    color: #fff;
+    border-color: #3f51b5;
+    background-color: #3f51b5;
+}
+
+input[type=submit]:hover {
+    background-color: #3f51b5;
+}
+
+.vid {
+    border-radius: 5px;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top: 9mm;
+    text-align: center;
+    align-items: center;
+}
