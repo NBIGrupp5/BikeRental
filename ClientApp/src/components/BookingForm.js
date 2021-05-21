@@ -1,11 +1,6 @@
 ﻿import React, { Component, useState } from 'react';
 import './BookingForm.css'
 
-
-
-
-
-
 export class BookingForm extends Component {
     static displayName = BookingForm.name;
 
@@ -20,7 +15,7 @@ export class BookingForm extends Component {
                     <p id="date"></p>
                     <script>
                         document.getElementById("date").innerHTML = Date();
-            </script>
+                    </script>
 
                     <div class="row">
                         <div class="col-75">
