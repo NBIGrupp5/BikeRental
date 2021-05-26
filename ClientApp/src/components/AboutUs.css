@@ -7,6 +7,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.h1 {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    font-family: 'Clear Sans', sans-serif;
+}
+
 /* Create two unequal columns that floats next to each other */
 .column {
     float: left;

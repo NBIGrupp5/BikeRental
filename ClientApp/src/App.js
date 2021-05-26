@@ -4,6 +4,8 @@ import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { BookingForm } from './components/BookingForm'
 import { Bikes } from './components/Bikes'
+
+import ShowAboutUs from './components/AboutUs'
 import './custom.css'
 
 export default class App extends Component {
@@ -13,8 +15,13 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
+         featureBikes
             <Route exact path='/BookingForm' component={BookingForm} />
             <Route exact path='/Bikes' component={Bikes} />
+
+        <Route exact path='/BookingForm' component={BookingForm} />
+        <Route path='/AboutUs' component={ShowAboutUs} />
+        main
       </Layout>
     );
   }
