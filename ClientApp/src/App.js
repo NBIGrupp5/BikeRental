@@ -15,12 +15,10 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-         
             <Route exact path='/BookingForm' component={BookingForm} />
             <Route exact path='/Bikes' component={Bikes} />
             <Route path='/AboutUs' component={ShowAboutUs} />
-        
-      </Layout>
+          </Layout>
     );
   }
 }
