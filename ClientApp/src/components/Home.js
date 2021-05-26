@@ -9,6 +9,11 @@ import "react-datepicker/dist/react-datepicker.css";
 export class Home extends Component {
   static displayName = Home.name;
 
+  componentDidMount() {
+    let bikes = fetch('api/bikes');
+    console.log(bikes);
+  }
+
   render () {
     return (
         <div>
