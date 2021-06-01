@@ -19,6 +19,12 @@ namespace BikeRental.EntityConfigurations
             builder
                 .Property(x => x.CreatedAt)
                 .HasDefaultValue(DateTime.Now);
+
+            builder
+                .Property(x => x.BikeId);
+
+            builder
+                .Property(x => x.CustomerId);
         }
     }
 }

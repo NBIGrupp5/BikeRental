@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BikeRental.Models
+﻿namespace BikeRental.Models
 {
-    public class Bike : EntityBase
+    public class Bike
     {
+        public int BikeId { get; set; }
         public string FrameNumber { get; set; }
+        public string BikeTypeName { get; set; }
     }
 }
