@@ -12,12 +12,13 @@ export class Home extends Component {
     }
 
     render() {
-        return (
+      return (         
             <div>
-                <Container fluid>
-                    <Image src={banner} fluid />
+                <Container>
+            <Image src={banner} fluid/>
                 </Container>
-            </div>
+          </div>         
+         
         );
     }
 }

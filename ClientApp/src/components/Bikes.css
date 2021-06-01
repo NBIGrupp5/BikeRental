@@ -1,5 +1,24 @@
 ﻿
+
+
+.card {
+    max-height: 700px;
+
+   
+    max-width: 250px;
+    min-width: 230px;
+}
+
 .img {
-    width: 250px;
-    height: 200px;
+    height: auto;
+    max-height: 300px;
+    max-width: 250px;
+    width: auto;
+}
+
+div.price {
+    position: absolute;
+    width: 50%;
+    bottom: 100px;
+    font-size: x-large;
 }
