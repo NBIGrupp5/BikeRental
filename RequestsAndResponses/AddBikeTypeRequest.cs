@@ -2,10 +2,10 @@
 
 namespace BikeRental.RequestsAndResponses
 {
-    public class BikeResponse
+    public class AddBikeTypeRequest
     {
-        public int BikeId { get; set; }
-        public string FrameNumber { get; set; }
+        public int Id { get; set; }
         public string BikeTypeName { get; set; }
+        public float BikeTypePrice { get; set; }
     }
 }

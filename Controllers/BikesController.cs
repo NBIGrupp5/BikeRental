@@ -23,8 +23,9 @@ namespace BikeRental.Controllers
             var bikesFromDb = _context.Bikes.ToList();
             var bikeResponses = bikesFromDb.Select(x => 
             new BikeResponse { 
-                Id = x.Id,
-                FrameNumber = x.FrameNumber
+                BikeId = x.BikeId,
+                FrameNumber = x.FrameNumber,
+                BikeTypeName = x.BikeTypeName
             });
             return Ok(bikeResponses);
         }
@@ -35,8 +36,9 @@ namespace BikeRental.Controllers
             var bikeFromDb = _context.Bikes.Find(bikeId);
             var bikeResponse = new BikeResponse
             {
-                Id = bikeFromDb.Id,
-                FrameNumber = bikeFromDb.FrameNumber
+                BikeId = bikeFromDb.BikeId,
+                FrameNumber = bikeFromDb.FrameNumber,
+                BikeTypeName = bikeFromDb.BikeTypeName
             };
             return Ok(bikeResponse);
         }
@@ -46,7 +48,8 @@ namespace BikeRental.Controllers
         {
             var bike = new Bike
             {
-                FrameNumber = request.FrameNumber
+                FrameNumber = request.FrameNumber,
+                BikeTypeName = request.BikeTypeName
             };
 
             _context.Bikes.Add(bike);
@@ -55,16 +58,18 @@ namespace BikeRental.Controllers
             var bikeResponse = new BikeResponse
             {
                 FrameNumber = bike.FrameNumber,
-                Id = bike.Id
+                BikeId = bike.BikeId,
+                BikeTypeName = bike.BikeTypeName
             };
-            return CreatedAtRoute(nameof(GetBike), new { bikeId = bikeResponse.Id }, bikeResponse);
+            return CreatedAtRoute(nameof(GetBike), new { bikeId = bikeResponse.BikeId }, bikeResponse);
         }
 
         [HttpDelete("{bikeId:int}")]
         public ActionResult DeleteBike(int bikeId)
         {
-            var bikeFromDb = _context.Bikes.Find(bikeId);
-            _context.Bikes.Remove(bikeFromDb);
+            var bikeToDelete = _context.Bikes.Find(bikeId);
+            _context.Bikes.Remove(bikeToDelete);
+            _context.SaveChanges();
             return NoContent();
         }
     }

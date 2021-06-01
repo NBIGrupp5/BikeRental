@@ -1,10 +1,6 @@
 ﻿using BikeRental.EntityConfigurations;
 using BikeRental.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BikeRental
 {
@@ -14,9 +10,9 @@ namespace BikeRental
         { }
 
         public DbSet<Bike> Bikes { get; set; }
-        public DbSet<Bike> BikeTypes { get; set; }
-        public DbSet<Bike> Bookings { get; set; }
-        public DbSet<Bike> Customers { get; set; }
+        public DbSet<BikeType> BikeTypes { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
