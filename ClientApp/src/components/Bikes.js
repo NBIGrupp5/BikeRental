@@ -21,7 +21,7 @@ export class Bikes extends Component {
                     <Card.Body>
                         <Card.Title>Stadscykel</Card.Title>
                         <Card.Text>
-                  En mountainbike eller terrängcykel är en typ av cykel som framförallt är avsedd att köras i terräng, där cyklarnas utformning även givit namn åt de olika motions- eller tävlingsdiscipliner som förekommer.
+                    Elegant kvalitetscykel. Ram med lågt insteg och rymlig korg fram.
                   <div className="price">Pris 249:-</div>
                   </Card.Text>
                     </Card.Body>
@@ -34,7 +34,7 @@ export class Bikes extends Component {
                     <Card.Body>
                         <Card.Title>Elcykel</Card.Title>
                         <Card.Text>
-                  En mountainbike eller terrängcykel är en typ av cykel som framförallt är avsedd att köras i terräng, där cyklarnas utformning även givit namn åt de olika motions- eller tävlingsdiscipliner som förekommer.
+                    Passar bra vid längre sträckor eller om du vill ha lite extra hjälp i uppförsbackarna. Elmotorn hjälper dig upp till 25km/h.
                   <div className="price">Pris 249:-</div>
                   </Card.Text>
                     </Card.Body>
@@ -47,7 +47,7 @@ export class Bikes extends Component {
                     <Card.Body>
                         <Card.Title>Mountainbike</Card.Title>
                         <Card.Text>
-                  MTB är en mountainbike cykel som är anpassad för barn. En mountainbike eller terrängcykel är en typ av cykel som framförallt är avsedd att köras i terräng, där cyklarnas utformning även givit namn åt de olika motions- eller tävlingsdiscipliner som förekommer..
+                    Vill du köra i lite tuffare terräng eller off-road passar denna cykel perfekt.{/* Med ställbar stöttdämpning fram får du en extra skön komfort på ett svårare underlag.*/}
                   <div className="price">Pris 269:-</div>
                   </Card.Text>
                     </Card.Body>
@@ -60,7 +60,7 @@ export class Bikes extends Component {
                     <Card.Body>
                         <Card.Title>Barncykel</Card.Title>
                         <Card.Text>
-                            Elcykel är en trampcykel som har försetts med en elektrisk motor som förstärker cyklistens trampkraft och som verkar endast då pedalerna rör sig. Cyklisten trampar som vanligt, men utan tungt motstånd och man kan lättare cykla långa sträckor, uppför backar och i motvind.
+                    Klart att barnen ska med cykellturen. Vi har barncyklar.
       </Card.Text>
                         <div className="price">Pris 179:-</div>
                     </Card.Body>

@@ -4,14 +4,16 @@ using BikeRental;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BikeRental.Migrations
 {
     [DbContext(typeof(BikeRentalContext))]
-    partial class BikeRentalContextModelSnapshot : ModelSnapshot
+    [Migration("20210529165634_changes-and-added-biketype")]
+    partial class changesandaddedbiketype
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,7 +29,6 @@ namespace BikeRental.Migrations
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
 
                     b.Property<string>("BikeTypeName")
                         .HasColumnType("nvarchar(max)");
@@ -58,7 +59,6 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-
                         .HasDefaultValue(new DateTime(2021, 5, 29, 18, 56, 34, 432, DateTimeKind.Local).AddTicks(7346));
 
                     b.HasKey("Id");
@@ -81,7 +81,6 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-
                         .HasDefaultValue(new DateTime(2021, 5, 29, 18, 56, 34, 443, DateTimeKind.Local).AddTicks(6368));
 
                     b.Property<int>("CustomerId")
@@ -100,7 +99,6 @@ namespace BikeRental.Migrations
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");

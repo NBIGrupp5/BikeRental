@@ -7,5 +7,7 @@ namespace BikeRental.Models
 {
     public class Booking : EntityBase
     {
+        public int CustomerId { get; set; } //FK
+        public int BikeId { get; set; } //FK
     }
 }

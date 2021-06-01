@@ -4,14 +4,16 @@ using BikeRental;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BikeRental.Migrations
 {
     [DbContext(typeof(BikeRentalContext))]
-    partial class BikeRentalContextModelSnapshot : ModelSnapshot
+    [Migration("20210526184120_BikeDBCreate")]
+    partial class BikeDBCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,23 +23,24 @@ namespace BikeRental.Migrations
 
             modelBuilder.Entity("BikeRental.Models.Bike", b =>
                 {
-                    b.Property<int>("BikeId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-
-                    b.Property<string>("BikeTypeName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2021, 5, 26, 20, 41, 19, 822, DateTimeKind.Local).AddTicks(681));
 
                     b.Property<string>("FrameNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("BikeId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Bikes");
+                    b.ToTable("Bike");
                 });
 
             modelBuilder.Entity("BikeRental.Models.BikeType", b =>
@@ -49,21 +52,14 @@ namespace BikeRental.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BikeTypeName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float>("BikeTypePrice")
-                        .HasColumnType("real");
-
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-
-                        .HasDefaultValue(new DateTime(2021, 5, 29, 18, 56, 34, 432, DateTimeKind.Local).AddTicks(7346));
+                        .HasDefaultValue(new DateTime(2021, 5, 26, 20, 41, 19, 838, DateTimeKind.Local).AddTicks(6632));
 
                     b.HasKey("Id");
 
-                    b.ToTable("BikeTypes");
+                    b.ToTable("BikeType");
                 });
 
             modelBuilder.Entity("BikeRental.Models.Booking", b =>
@@ -75,48 +71,33 @@ namespace BikeRental.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BikeId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-
-                        .HasDefaultValue(new DateTime(2021, 5, 29, 18, 56, 34, 443, DateTimeKind.Local).AddTicks(6368));
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
+                        .HasDefaultValue(new DateTime(2021, 5, 26, 20, 41, 19, 839, DateTimeKind.Local).AddTicks(8486));
 
                     b.HasKey("Id");
 
-                    b.ToTable("Bookings");
+                    b.ToTable("Booking");
                 });
 
             modelBuilder.Entity("BikeRental.Models.Customer", b =>
                 {
-                    b.Property<int>("CustomerId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2021, 5, 26, 20, 41, 19, 840, DateTimeKind.Local).AddTicks(9235));
 
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("Id");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CustomerId");
-
-                    b.ToTable("Customers");
+                    b.ToTable("Customer");
                 });
 #pragma warning restore 612, 618
         }
