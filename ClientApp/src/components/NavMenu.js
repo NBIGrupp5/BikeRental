@@ -24,7 +24,7 @@ export class NavMenu extends Component {
   }
 
   render () {
-    return (
+    return (  
       <header>
         <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
           <Container>
@@ -43,7 +43,7 @@ export class NavMenu extends Component {
                   <NavLink tag={Link} className="text-dark" to="/AboutUs">Om Oss</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/Login">Logga In</NavLink>
+                  <NavLink tag={Link} className="text-dark" to="/Loginmodal">Logga In</NavLink>
                 </NavItem>
 
               </ul>
