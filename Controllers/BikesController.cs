@@ -1,6 +1,7 @@
 ﻿using BikeRental.Models;
 using BikeRental.RequestsAndResponses;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,20 +21,33 @@ namespace BikeRental.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<BikeResponse>> GetAllBikes()
         {
-            var bikesFromDb = _context.Bikes.ToList();
-            var bikeResponses = bikesFromDb.Select(x => 
-            new BikeResponse { 
-                BikeId = x.BikeId,
-                FrameNumber = x.FrameNumber,
-                BikeTypeName = x.BikeTypeName
-            });
-            return Ok(bikeResponses);
+            try
+            {
+                var bikesFromDb = _context.Bikes.ToList();
+                var bikeResponses = bikesFromDb.Select(x =>
+                new BikeResponse
+                {
+                    BikeId = x.BikeId,
+                    FrameNumber = x.FrameNumber,
+                    BikeTypeName = x.BikeTypeName
+                });
+                return Ok(bikeResponses);
+            }
+            catch (Exception) 
+            {
+                throw;
+            }
+            
         }
 
         [HttpGet("{bikeId:int}", Name = "GetBike")]
         public ActionResult<BikeResponse> GetBike(int bikeId)
         {
             var bikeFromDb = _context.Bikes.Find(bikeId);
+            if (bikeFromDb == null)
+            {
+                return NotFound($"Bicycle with Id = {bikeId} doesn't exist.");
+            }
             var bikeResponse = new BikeResponse
             {
                 BikeId = bikeFromDb.BikeId,
@@ -68,6 +82,10 @@ namespace BikeRental.Controllers
         public ActionResult DeleteBike(int bikeId)
         {
             var bikeToDelete = _context.Bikes.Find(bikeId);
+            if (bikeToDelete == null)
+            {
+                return BadRequest($"Bicycle with Id = {bikeId} can not be deleted, because it doesn't exist.");
+            }
             _context.Bikes.Remove(bikeToDelete);
             _context.SaveChanges();
             return NoContent();

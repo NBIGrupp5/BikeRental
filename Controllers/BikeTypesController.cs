@@ -1,6 +1,7 @@
 ﻿using BikeRental.Models;
 using BikeRental.RequestsAndResponses;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,20 +21,33 @@ namespace BikeRental.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<BikeTypeResponse>> GetAllBikeTypes()
         {
-            var bikeTypesFromDb = _context.BikeTypes.ToList();
-            var bikeTypeResponses = bikeTypesFromDb.Select(x => 
-            new BikeTypeResponse {
-                Id = x.Id,
-                BikeTypeName = x.BikeTypeName,
-                BikeTypePrice = x.BikeTypePrice
-            });
-            return Ok(bikeTypeResponses);
+            try
+            {
+                var bikeTypesFromDb = _context.BikeTypes.ToList();
+                var bikeTypeResponses = bikeTypesFromDb.Select(x =>
+                new BikeTypeResponse
+                {
+                    Id = x.Id,
+                    BikeTypeName = x.BikeTypeName,
+                    BikeTypePrice = x.BikeTypePrice
+                });
+                return Ok(bikeTypeResponses);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
 
         [HttpGet("{Id:int}", Name = "GetBikeType")]
         public ActionResult<BikeTypeResponse> GetBikeType(int Id)
         {
             var bikeTypeFromDb = _context.BikeTypes.Find(Id);
+            if (bikeTypeFromDb == null)
+            {
+                return NotFound($"Can not find Bike Type with Id = {Id}.");
+            }
             var bikeTypeResponse = new BikeTypeResponse
             {
                 Id = bikeTypeFromDb.Id,
@@ -68,6 +82,10 @@ namespace BikeRental.Controllers
         public ActionResult DeleteType(int Id)
         {
             var typeToDelete = _context.BikeTypes.Find(Id);
+            if (typeToDelete == null)
+            {
+                return BadRequest($"Bike Type with Id = {Id} not found. Can not delete.");
+            }
             _context.BikeTypes.Remove(typeToDelete);
             _context.SaveChanges();
             return NoContent();
