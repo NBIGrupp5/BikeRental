@@ -10,5 +10,7 @@ namespace BikeRental.Models
         public string BikeTypeName { get; set; }
         public float BikeTypePrice { get; set; }
 
+        public ICollection<Bike> Bikes { get; set; }
+
     }
 }
