@@ -28,6 +28,8 @@ namespace BikeRental.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("BikeTypeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("BikeTypeName")
                         .HasColumnType("nvarchar(max)");
@@ -36,6 +38,8 @@ namespace BikeRental.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BikeId");
+
+                    b.HasIndex("BikeTypeId");
 
                     b.ToTable("Bikes");
                 });
@@ -58,8 +62,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-
-                        .HasDefaultValue(new DateTime(2021, 5, 29, 18, 56, 34, 432, DateTimeKind.Local).AddTicks(7346));
+                        .HasDefaultValue(new DateTime(2021, 6, 2, 16, 22, 57, 28, DateTimeKind.Local).AddTicks(5687));
 
                     b.HasKey("Id");
 
@@ -81,8 +84,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-
-                        .HasDefaultValue(new DateTime(2021, 5, 29, 18, 56, 34, 443, DateTimeKind.Local).AddTicks(6368));
+                        .HasDefaultValue(new DateTime(2021, 6, 2, 16, 22, 57, 35, DateTimeKind.Local).AddTicks(3782));
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
@@ -101,7 +103,6 @@ namespace BikeRental.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -117,6 +118,20 @@ namespace BikeRental.Migrations
                     b.HasKey("CustomerId");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("BikeRental.Models.Bike", b =>
+                {
+                    b.HasOne("BikeRental.Models.BikeType", "BikeType")
+                        .WithMany("Bikes")
+                        .HasForeignKey("BikeTypeId");
+
+                    b.Navigation("BikeType");
+                });
+
+            modelBuilder.Entity("BikeRental.Models.BikeType", b =>
+                {
+                    b.Navigation("Bikes");
                 });
 #pragma warning restore 612, 618
         }
