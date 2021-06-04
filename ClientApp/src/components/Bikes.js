@@ -4,17 +4,18 @@ import CardDeck from 'react-bootstrap/CardDeck'
 import Button from 'react-bootstrap/Button'
 import "./Bikes.css";
 import Container from 'react-bootstrap/esm/Container';
+import { withRouter } from 'react-router-dom';
+import history from './../history';
 
 export class Bikes extends Component {
 
+  nextPath(path) {
+    this.props.history.push(path);
+  }
+
     render() {
         return (
-
-        
-
-          <Container>            
-
-
+          <Container>      
             <CardDeck className="deck">
                 <Card className="card">
                 <Card.Img variant="top" className="img" src="https://images.unsplash.com/flagged/photo-1561273560-469573e7e290?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTZ8fGJpa2UlMjByaWRpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
@@ -26,7 +27,7 @@ export class Bikes extends Component {
                   </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary">Lägg till</Button>
+                  <Button variant="primary" onClick={() => this.BookingForm('/components/BookingForm')}>Lägg till</Button>
                     </Card.Footer>
                 </Card>
               <Card className="card">
@@ -39,9 +40,10 @@ export class Bikes extends Component {
                   </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary">Lägg till</Button>
+                  <Button onClick={() => this.nextPath('/components/BookingForm')}>Lägg till</Button>
                     </Card.Footer>
-                </Card>
+              </Card>
+
               <Card className card>
                 <Card.Img variant="top" className="img" src="https://images.unsplash.com/photo-1588935365434-fa1578152e18?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG1vdW50YWluJTIwYmlrZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
                     <Card.Body>
@@ -76,4 +78,4 @@ export class Bikes extends Component {
     }
 }
 
-export default Bikes;
+export default withRouter(Bikes);
