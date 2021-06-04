@@ -21,13 +21,8 @@ export default class App extends Component {
             <Route exact path='/BookingForm' component={BookingForm} />
             <Route exact path='/Bikes' component={Bikes} />
             <Route path='/AboutUs' component={ShowAboutUs} />
-<<<<<<< HEAD
-
-
-=======
             <Route path='/Loggain' component={Loggain} />
             <Route path='/Skapakonto' component={Skapakonto} />
->>>>>>> bbbb36232712e7ddeece82f621553b3d97b9ebe7
         </div>
         </Layout>
     );
