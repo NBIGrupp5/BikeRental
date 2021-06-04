@@ -6,9 +6,9 @@ import { BookingForm } from './components/BookingForm'
 import { Bikes } from './components/Bikes'
 import ShowAboutUs from './components/AboutUs'
 import { NavMenu } from './components/NavMenu'
-
-
 import './custom.css'
+import { Skapakonto } from './components/Skapakonto';
+import { Loggain } from './components/Loggain';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -16,17 +16,13 @@ export default class App extends Component {
   render () {
     return (
      <Layout>
-      <div>    
-        
-        
-        
-        
-        <Bikes />
-        
+      <div>       
+        <Bikes />      
             <Route exact path='/BookingForm' component={BookingForm} />
             <Route exact path='/Bikes' component={Bikes} />
             <Route path='/AboutUs' component={ShowAboutUs} />
-
+            <Route path='/Loggain' component={Loggain} />
+            <Route path='/Skapakonto' component={Skapakonto} />
         </div>
         </Layout>
     );
