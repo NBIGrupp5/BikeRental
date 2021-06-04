@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BikeRental.Migrations
 {
-    public partial class Initial : Migration
+    public partial class CreateDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace BikeRental.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BikeTypeName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BikeTypePrice = table.Column<float>(type: "real", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 2, 16, 22, 57, 28, DateTimeKind.Local).AddTicks(5687))
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 4, 11, 34, 35, 73, DateTimeKind.Local).AddTicks(1537))
                 },
                 constraints: table =>
                 {
@@ -30,7 +30,7 @@ namespace BikeRental.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     BikeId = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 2, 16, 22, 57, 35, DateTimeKind.Local).AddTicks(3782))
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 4, 11, 34, 35, 80, DateTimeKind.Local).AddTicks(1462))
                 },
                 constraints: table =>
                 {
@@ -60,8 +60,7 @@ namespace BikeRental.Migrations
                     BikeId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FrameNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BikeTypeName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BikeTypeId = table.Column<int>(type: "int", nullable: true)
+                    BikeTypeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -71,8 +70,18 @@ namespace BikeRental.Migrations
                         column: x => x.BikeTypeId,
                         principalTable: "BikeTypes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "BikeTypes",
+                columns: new[] { "Id", "BikeTypeName", "BikeTypePrice" },
+                values: new object[] { 1, "Elcykel", 399f });
+
+            migrationBuilder.InsertData(
+                table: "Bikes",
+                columns: new[] { "BikeId", "BikeTypeId", "FrameNumber" },
+                values: new object[] { 1, 1, "1234" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Bikes_BikeTypeId",

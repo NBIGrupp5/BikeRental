@@ -6,8 +6,6 @@ import { BookingForm } from './components/BookingForm'
 import { Bikes } from './components/Bikes'
 import ShowAboutUs from './components/AboutUs'
 import { NavMenu } from './components/NavMenu'
-
-
 import './custom.css'
 
 export default class App extends Component {
@@ -26,6 +24,7 @@ export default class App extends Component {
             <Route exact path='/BookingForm' component={BookingForm} />
             <Route exact path='/Bikes' component={Bikes} />
             <Route path='/AboutUs' component={ShowAboutUs} />
+
 
         </div>
         </Layout>

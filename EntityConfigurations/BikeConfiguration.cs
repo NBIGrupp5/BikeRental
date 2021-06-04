@@ -20,7 +20,7 @@ namespace BikeRental.EntityConfigurations
                 .Property(x => x.FrameNumber);
 
             builder
-                .Property(b => b.BikeTypeName);
+                .Property(b => b.BikeTypeId);
         }
     }
 }

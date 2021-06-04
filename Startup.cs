@@ -27,6 +27,7 @@ namespace BikeRental
             });
 
             services.AddControllersWithViews();
+            services.AddSwaggerGen();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -52,7 +53,6 @@ namespace BikeRental
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -60,6 +60,12 @@ namespace BikeRental
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+            });
+
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V2");
             });
 
             app.UseSpa(spa =>

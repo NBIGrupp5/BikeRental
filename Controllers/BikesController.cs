@@ -29,7 +29,7 @@ namespace BikeRental.Controllers
                 {
                     BikeId = x.BikeId,
                     FrameNumber = x.FrameNumber,
-                    BikeTypeName = x.BikeTypeName
+                    BikeTypeId = x.BikeTypeId
                 });
                 return Ok(bikeResponses);
             }
@@ -52,7 +52,7 @@ namespace BikeRental.Controllers
             {
                 BikeId = bikeFromDb.BikeId,
                 FrameNumber = bikeFromDb.FrameNumber,
-                BikeTypeName = bikeFromDb.BikeTypeName
+                BikeTypeId = bikeFromDb.BikeTypeId
             };
             return Ok(bikeResponse);
         }
@@ -63,7 +63,7 @@ namespace BikeRental.Controllers
             var bike = new Bike
             {
                 FrameNumber = request.FrameNumber,
-                BikeTypeName = request.BikeTypeName
+                BikeTypeId = request.BikeTypeId
             };
 
             _context.Bikes.Add(bike);
@@ -73,7 +73,7 @@ namespace BikeRental.Controllers
             {
                 FrameNumber = bike.FrameNumber,
                 BikeId = bike.BikeId,
-                BikeTypeName = bike.BikeTypeName
+                BikeTypeId = bike.BikeTypeId
             };
             return CreatedAtRoute(nameof(GetBike), new { bikeId = bikeResponse.BikeId }, bikeResponse);
         }
