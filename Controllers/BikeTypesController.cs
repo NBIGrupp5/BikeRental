@@ -75,7 +75,7 @@ namespace BikeRental.Controllers
                 BikeTypeName = bikeType.BikeTypeName,
                 BikeTypePrice = bikeType.BikeTypePrice
             };
-            return CreatedAtRoute(nameof(GetBikeType), new { bikeTypeId = bikeTypeResponse.Id }, bikeTypeResponse);
+            return CreatedAtAction(nameof(AddBikeType), new { bikeTypeId = bikeTypeResponse.Id }, bikeTypeResponse);
         }
 
         [HttpDelete("{Id:int}")]
