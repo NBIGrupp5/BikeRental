@@ -7,6 +7,11 @@ import { Home } from './Home';
 export class Layout extends Component {
   static displayName = Layout.name;
 
+  constructor(props) {
+    console.log(props)
+    super(props)
+    
+  }
   render () {
     return (
       <div>
