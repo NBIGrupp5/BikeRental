@@ -112,7 +112,6 @@ export class BookingForm extends Component {
                         </Accordion.Collapse>
                       </Accordion>
 
-
                     </div>
                   </div>
 
