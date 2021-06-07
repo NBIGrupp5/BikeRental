@@ -4,7 +4,7 @@
     {
         public int BikeId { get; set; }
         public string FrameNumber { get; set; }
-        public string BikeTypeName { get; set; }
         public BikeType BikeType { get; set; }
+        public int BikeTypeId { get; set; }
     }
 }
