@@ -2,24 +2,36 @@
 
 
 .card {
-    height: auto;
+    height: 900px;
     max-height: 900px;
     max-width: 250px;
     min-width: 230px;
 }
 
-.img {
-    height: auto;
-    min-height: 300px;
-    max-height: 300px;
+.cardsize {
+    height: 700px;
+    width:250px;
+    
+    /*
+    max-height: 900px;
     max-width: 250px;
-    width: auto;
+    min-width: 230px;*/
+}
+
+.card-body {
+    height: 245px;
+    width: 228px;
+}
+
+.card-footer {
+
+}
+.img2 {
+    height: 330px;
+    width: 228px;
 }
 
 div.price {
-    position: absolute;
-    width: 50%;
-    bottom: 100px;
     font-size: x-large;
 }
 
@@ -28,3 +40,4 @@ div.price {
   width: 25%;
   padding: 0 10px;
 }
+
