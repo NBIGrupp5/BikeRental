@@ -95,6 +95,13 @@ export class BookingForm extends Component {
                                 <input type="submit" value="Slutför bokning" class="btn"></input></div>
                             </Accordion.Collapse>
                             <br></br>
+
+                            <Link to={{ pathname: 'BookingConfirmation' }}>
+                              <input type="submit" value="Slutför bokning" className="btn"></input></Link>
+                          </div>
+                        </Accordion.Collapse>
+                      </Accordion>
+
                             <Accordion.Toggle className="paybox" eventKey="2">
                               Swish
                           </Accordion.Toggle>
