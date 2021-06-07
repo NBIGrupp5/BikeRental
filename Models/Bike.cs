@@ -2,6 +2,7 @@
 {
     public class Bike
     {
+       
         public int BikeId { get; set; }
         public string FrameNumber { get; set; }
         public BikeType BikeType { get; set; }

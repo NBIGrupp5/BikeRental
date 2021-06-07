@@ -103,7 +103,7 @@ export class BookingForm extends Component {
                                 <div>Skicka med ditt registrerade nummer till: </div>
                                 <div><h3>0733 55 55 55</h3></div>
                                 <br></br>
-                                <input type="submit" value="Slutför bokning" class="btn"></input></div>
+                                <input type="submit" value="Slutför bokning" className="btn"></input></div>
                             </Accordion.Collapse>
                           </Accordion>
 

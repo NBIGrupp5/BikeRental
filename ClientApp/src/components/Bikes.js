@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import CardColumns from 'react-bootstrap/CardColumns'
 import Button from 'react-bootstrap/Button'
 import "./Bikes.css";
-import Container from 'react-bootstrap/esm/Container';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -43,7 +42,7 @@ export class Bikes extends Component {
                 const { id, bikeTypeName, bikeTypePrice, bikeTypeDescription, bikeTypeImage } = bike;
 
                 return (
-                  <CardColumns>
+                  <CardColumns key={id}>
                   <Card>
                     <Card.Img variant="top" src={bikeTypeImage} />
                     <Card.Body>
