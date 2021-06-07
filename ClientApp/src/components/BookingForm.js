@@ -10,9 +10,7 @@ export class BookingForm extends Component {
         return (
             <div>
                 <body>
-
                     <h2>Din bokning</h2>
-
                     {/*<!-- Tid och datum för denna beställning -->*/}
                     <p id="date"></p>
                     <script>

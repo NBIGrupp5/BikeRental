@@ -17,10 +17,11 @@ export default class App extends Component {
     return (
      <Layout>
       <div>       
-        <Bikes />      
+        <Bikes/>      
             <Route exact path='/BookingForm' component={BookingForm} />
             <Route exact path='/Bikes' component={Bikes} />
-            <Route path='/AboutUs' component={ShowAboutUs} />
+                <Route path='/AboutUs' component={ShowAboutUs} />
+                <Route path='/' component={ShowAboutUs} />
             <Route path='/Loggain' component={Loggain} />
             <Route path='/Skapakonto' component={Skapakonto} />
         </div>
