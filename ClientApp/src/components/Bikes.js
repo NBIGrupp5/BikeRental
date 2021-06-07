@@ -57,7 +57,7 @@ export class Bikes extends Component {
                       <Link className="btn btn-primary" to={{
                         pathname: "/BookingForm",
                         state: { biketype: bike }
-                      }} />
+                      }}>Hyra</Link>
                     </Card.Footer>
                   </Card>
                 </CardColumns>

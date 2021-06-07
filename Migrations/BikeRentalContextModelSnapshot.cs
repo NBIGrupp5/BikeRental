@@ -73,12 +73,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-<<<<<<< HEAD
-                        .HasDefaultValue(new DateTime(2021, 6, 7, 10, 19, 4, 527, DateTimeKind.Local).AddTicks(8120));
-=======
-
-                        .HasDefaultValue(new DateTime(2021, 6, 4, 10, 51, 29, 953, DateTimeKind.Local).AddTicks(9633));
->>>>>>> main
+                        .HasDefaultValue(new DateTime(2021, 6, 7, 11, 36, 24, 477, DateTimeKind.Local).AddTicks(7533));
 
                     b.HasKey("Id");
 
@@ -89,9 +84,36 @@ namespace BikeRental.Migrations
                         {
                             Id = 1,
                             BikeTypeDescription = "Passar bra vid längre sträckor eller om du vill ha lite extra hjälp i uppförsbackarna. Elmotorn hjälper dig upp till 25km/h.",
-                            BikeTypeImage = "https://s3-eu-west-1.amazonaws.com/static.wm3.se/sites/531/media/219863_medium_161179_medium_cykel1_%281%29.png",
+                            BikeTypeImage = "https://www.electricbike.com/wp-content/uploads/2020/08/Celebrity3.jpg",
                             BikeTypeName = "Elcykel",
-                            BikeTypePrice = 399f,
+                            BikeTypePrice = 299f,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BikeTypeDescription = "Elegant kvalitetscykel. Ram med lågt insteg.",
+                            BikeTypeImage = "https://images.unsplash.com/flagged/photo-1561273560-469573e7e290?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTZ8fGJpa2UlMjByaWRpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                            BikeTypeName = "Stadscykel",
+                            BikeTypePrice = 249f,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BikeTypeDescription = "Vill du köra i lite tuffare terräng eller off-road passar denna cykel perfekt.",
+                            BikeTypeImage = "https://images.unsplash.com/photo-1588935365434-fa1578152e18?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG1vdW50YWluJTIwYmlrZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                            BikeTypeName = "Mountainbike",
+                            BikeTypePrice = 269f,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BikeTypeDescription = "Klart att barnen ska med cykellturen. Vi har barncyklar.",
+                            BikeTypeImage = "https://image.freepik.com/free-photo/back-view-little-child-blue-coat-riding-bicycle_85672-2742.jpg",
+                            BikeTypeName = "Barncykel",
+                            BikeTypePrice = 179f,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -111,12 +133,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-<<<<<<< HEAD
-                        .HasDefaultValue(new DateTime(2021, 6, 7, 10, 19, 4, 534, DateTimeKind.Local).AddTicks(8522));
-=======
-
-                        .HasDefaultValue(new DateTime(2021, 6, 4, 10, 51, 29, 968, DateTimeKind.Local).AddTicks(1345));
->>>>>>> main
+                        .HasDefaultValue(new DateTime(2021, 6, 7, 11, 36, 24, 484, DateTimeKind.Local).AddTicks(8385));
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
