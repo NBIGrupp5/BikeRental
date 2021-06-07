@@ -12,10 +12,6 @@ import { Link } from 'react-router-dom';
 
 export class Bikes extends Component {
 
-  nextPath(path) {
-    this.props.history.push(path);
-  }
-
 
   constructor(props) {
     super(props);
@@ -38,15 +34,16 @@ export class Bikes extends Component {
   render() {
 
     const { isLoading, bikes } = this.state;
-    
-    return (
-        <div>
-          {!isLoading ? (
-            bikes.map(bike => {
-              const { id, bikeTypeName, bikeTypePrice, bikeTypeDescription, bikeTypeImage } = bike;
 
-              return (
-                <CardColumns>
+    return (
+      <div>
+          {!isLoading
+            ? (
+              bikes.map(bike => {
+                const { id, bikeTypeName, bikeTypePrice, bikeTypeDescription, bikeTypeImage } = bike;
+
+                return (
+                  <CardColumns>
                   <Card>
                     <Card.Img variant="top" src={bikeTypeImage} />
                     <Card.Body>
@@ -59,31 +56,22 @@ export class Bikes extends Component {
                     <Card.Footer>
                       <Link className="btn btn-primary" to={{
                         pathname: "/BookingForm",
-                        state: {biketype: bike}
+                        state: { biketype: bike }
                       }} />
                     </Card.Footer>
                   </Card>
                 </CardColumns>
-              );
-            })
-          ) : (
+                );
+              })
+            )
+            : (
               <p>Loading...</p>
             )}
         </div>
-
     );
 
   }
-
-
-    createBikeElements() {
-      let elements = [];
-      for (let bike of this.state.bikes) {
-        elements.push(<div key={bike.Id}></div>);
-      }
-      return (elements);
-    }
 }
 
-export default withRouter(Bikes);
 
+export default withRouter(Bikes);

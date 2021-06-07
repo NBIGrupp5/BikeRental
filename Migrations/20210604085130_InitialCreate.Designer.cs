@@ -4,14 +4,16 @@ using BikeRental;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BikeRental.Migrations
 {
     [DbContext(typeof(BikeRentalContext))]
-    partial class BikeRentalContextModelSnapshot : ModelSnapshot
+    [Migration("20210604085130_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,8 +30,11 @@ namespace BikeRental.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BikeTypeId")
+                    b.Property<int?>("BikeTypeId")
                         .HasColumnType("int");
+
+                    b.Property<string>("BikeTypeName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FrameNumber")
                         .HasColumnType("nvarchar(max)");
@@ -39,14 +44,6 @@ namespace BikeRental.Migrations
                     b.HasIndex("BikeTypeId");
 
                     b.ToTable("Bikes");
-
-                    b.HasData(
-                        new
-                        {
-                            BikeId = 1,
-                            BikeTypeId = 1,
-                            FrameNumber = "1234"
-                        });
                 });
 
             modelBuilder.Entity("BikeRental.Models.BikeType", b =>
@@ -58,12 +55,6 @@ namespace BikeRental.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BikeTypeDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BikeTypeImage")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("BikeTypeName")
                         .HasColumnType("nvarchar(max)");
 
@@ -73,27 +64,11 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-<<<<<<< HEAD
-                        .HasDefaultValue(new DateTime(2021, 6, 7, 10, 19, 4, 527, DateTimeKind.Local).AddTicks(8120));
-=======
-
                         .HasDefaultValue(new DateTime(2021, 6, 4, 10, 51, 29, 953, DateTimeKind.Local).AddTicks(9633));
->>>>>>> main
 
                     b.HasKey("Id");
 
                     b.ToTable("BikeTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BikeTypeDescription = "Passar bra vid längre sträckor eller om du vill ha lite extra hjälp i uppförsbackarna. Elmotorn hjälper dig upp till 25km/h.",
-                            BikeTypeImage = "https://s3-eu-west-1.amazonaws.com/static.wm3.se/sites/531/media/219863_medium_161179_medium_cykel1_%281%29.png",
-                            BikeTypeName = "Elcykel",
-                            BikeTypePrice = 399f,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("BikeRental.Models.Booking", b =>
@@ -111,12 +86,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-<<<<<<< HEAD
-                        .HasDefaultValue(new DateTime(2021, 6, 7, 10, 19, 4, 534, DateTimeKind.Local).AddTicks(8522));
-=======
-
                         .HasDefaultValue(new DateTime(2021, 6, 4, 10, 51, 29, 968, DateTimeKind.Local).AddTicks(1345));
->>>>>>> main
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
@@ -156,9 +126,7 @@ namespace BikeRental.Migrations
                 {
                     b.HasOne("BikeRental.Models.BikeType", "BikeType")
                         .WithMany("Bikes")
-                        .HasForeignKey("BikeTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BikeTypeId");
 
                     b.Navigation("BikeType");
                 });
