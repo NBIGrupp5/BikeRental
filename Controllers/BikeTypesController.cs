@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading.Tasks;
 
 namespace BikeRental.Controllers
@@ -29,7 +30,9 @@ namespace BikeRental.Controllers
                 {
                     Id = x.Id,
                     BikeTypeName = x.BikeTypeName,
-                    BikeTypePrice = x.BikeTypePrice
+                    BikeTypePrice = x.BikeTypePrice,
+                    BikeTypeDescription = x.BikeTypeDescription,
+                    BikeTypeImage = x.BikeTypeImage
                 });
                 return Ok(bikeTypeResponses);
             }
@@ -52,7 +55,9 @@ namespace BikeRental.Controllers
             {
                 Id = bikeTypeFromDb.Id,
                 BikeTypeName = bikeTypeFromDb.BikeTypeName,
-                BikeTypePrice = bikeTypeFromDb.BikeTypePrice
+                BikeTypePrice = bikeTypeFromDb.BikeTypePrice,
+                BikeTypeDescription = bikeTypeFromDb.BikeTypeDescription,
+                BikeTypeImage = bikeTypeFromDb.BikeTypeImage
             };
             return Ok(bikeTypeResponse);
         }
@@ -63,7 +68,9 @@ namespace BikeRental.Controllers
             var bikeType = new BikeType
             {
                 BikeTypeName = request.BikeTypeName,
-                BikeTypePrice = request.BikeTypePrice
+                BikeTypePrice = request.BikeTypePrice,
+                BikeTypeDescription = request.BikeTypeDescription,
+                BikeTypeImage = request.BikeTypeImage
             };
 
             _context.BikeTypes.Add(bikeType);
@@ -73,7 +80,9 @@ namespace BikeRental.Controllers
             {
                 Id = bikeType.Id,
                 BikeTypeName = bikeType.BikeTypeName,
-                BikeTypePrice = bikeType.BikeTypePrice
+                BikeTypePrice = bikeType.BikeTypePrice,
+                BikeTypeDescription = bikeType.BikeTypeDescription,
+                BikeTypeImage = bikeType.BikeTypeImage
             };
             return CreatedAtAction(nameof(AddBikeType), new { bikeTypeId = bikeTypeResponse.Id }, bikeTypeResponse);
         }
