@@ -6,6 +6,16 @@ import Accordion from 'react-bootstrap/Accordion'
 export class BookingForm extends Component {
     static displayName = BookingForm.name;
 
+
+    constructor(props) {
+      super(props);
+      console.log(props)
+      //this.state = {
+      //    biketype
+            
+      //  }
+    }
+
     render() {
         return (
             <div>

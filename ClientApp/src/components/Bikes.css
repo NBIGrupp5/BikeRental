@@ -2,10 +2,8 @@
 
 
 .card {
-    height: 650px;
+    height: auto;
     max-height: 900px;
-
-   
     max-width: 250px;
     min-width: 230px;
 }
@@ -23,4 +21,10 @@ div.price {
     width: 50%;
     bottom: 100px;
     font-size: x-large;
+}
+
+.card-columns {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
 }

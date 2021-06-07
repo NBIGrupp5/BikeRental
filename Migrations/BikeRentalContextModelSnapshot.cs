@@ -58,6 +58,12 @@ namespace BikeRental.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("BikeTypeDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BikeTypeImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("BikeTypeName")
                         .HasColumnType("nvarchar(max)");
 
@@ -67,7 +73,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 6, 4, 12, 54, 37, 29, DateTimeKind.Local).AddTicks(7396));
+                        .HasDefaultValue(new DateTime(2021, 6, 7, 10, 19, 4, 527, DateTimeKind.Local).AddTicks(8120));
 
                     b.HasKey("Id");
 
@@ -77,6 +83,8 @@ namespace BikeRental.Migrations
                         new
                         {
                             Id = 1,
+                            BikeTypeDescription = "Passar bra vid längre sträckor eller om du vill ha lite extra hjälp i uppförsbackarna. Elmotorn hjälper dig upp till 25km/h.",
+                            BikeTypeImage = "https://s3-eu-west-1.amazonaws.com/static.wm3.se/sites/531/media/219863_medium_161179_medium_cykel1_%281%29.png",
                             BikeTypeName = "Elcykel",
                             BikeTypePrice = 399f,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -98,7 +106,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 6, 4, 12, 54, 37, 37, DateTimeKind.Local).AddTicks(1642));
+                        .HasDefaultValue(new DateTime(2021, 6, 7, 10, 19, 4, 534, DateTimeKind.Local).AddTicks(8522));
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");

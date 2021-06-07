@@ -19,7 +19,11 @@ namespace BikeRental
             modelBuilder
                 .Entity<BikeType>()
                 .HasData(
-                    new BikeType { BikeTypeName = "Elcykel", Id = 1, BikeTypePrice = 399 }
+                    new BikeType
+                    {
+                        BikeTypeName = "Elcykel", Id = 1, BikeTypePrice = 399, BikeTypeDescription = "Passar bra vid längre sträckor eller om du vill ha lite extra hjälp i uppförsbackarna. Elmotorn hjälper dig upp till 25km/h.", 
+                        BikeTypeImage = "https://s3-eu-west-1.amazonaws.com/static.wm3.se/sites/531/media/219863_medium_161179_medium_cykel1_%281%29.png"
+                    }
                 );
 
             modelBuilder

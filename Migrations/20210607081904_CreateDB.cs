@@ -15,7 +15,9 @@ namespace BikeRental.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BikeTypeName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BikeTypePrice = table.Column<float>(type: "real", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 4, 12, 54, 37, 29, DateTimeKind.Local).AddTicks(7396))
+                    BikeTypeDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BikeTypeImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 7, 10, 19, 4, 527, DateTimeKind.Local).AddTicks(8120))
                 },
                 constraints: table =>
                 {
@@ -30,7 +32,7 @@ namespace BikeRental.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     BikeId = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 4, 12, 54, 37, 37, DateTimeKind.Local).AddTicks(1642))
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 7, 10, 19, 4, 534, DateTimeKind.Local).AddTicks(8522))
                 },
                 constraints: table =>
                 {
@@ -75,8 +77,8 @@ namespace BikeRental.Migrations
 
             migrationBuilder.InsertData(
                 table: "BikeTypes",
-                columns: new[] { "Id", "BikeTypeName", "BikeTypePrice" },
-                values: new object[] { 1, "Elcykel", 399f });
+                columns: new[] { "Id", "BikeTypeDescription", "BikeTypeImage", "BikeTypeName", "BikeTypePrice" },
+                values: new object[] { 1, "Passar bra vid längre sträckor eller om du vill ha lite extra hjälp i uppförsbackarna. Elmotorn hjälper dig upp till 25km/h.", "https://s3-eu-west-1.amazonaws.com/static.wm3.se/sites/531/media/219863_medium_161179_medium_cykel1_%281%29.png", "Elcykel", 399f });
 
             migrationBuilder.InsertData(
                 table: "Bikes",
