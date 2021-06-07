@@ -7,10 +7,6 @@ import banner from './img/banner0.png';
 export class Home extends Component {
     static displayName = Home.name;
 
-    componentDidMount() {
-        let bikes = fetch('api/bikes');
-        console.log(bikes);
-    }
 
     render() {
       return (         

@@ -9,6 +9,8 @@ namespace BikeRental.Models
     {
         public string BikeTypeName { get; set; }
         public float BikeTypePrice { get; set; }
+        public string BikeTypeDescription { get; set; }
+        public string BikeTypeImage { get; set; }
 
         public ICollection<Bike> Bikes { get; set; }
 

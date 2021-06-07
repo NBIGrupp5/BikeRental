@@ -9,21 +9,29 @@ import { NavMenu } from './components/NavMenu'
 import './custom.css'
 import { Skapakonto } from './components/Skapakonto';
 import { Loggain } from './components/Loggain';
+import { BookingConfirmation } from './components/BookingConfirmation';
+
 
 export default class App extends Component {
   static displayName = App.name;
 
+  constructor(props) {
+    console.log(props)
+    super(props)
+
+  }
+
   render () {
     return (
      <Layout>
-      <div>       
-        <Bikes/>      
+      <div>                       
             <Route exact path='/BookingForm' component={BookingForm} />
+            <Route exact path='/' component={Bikes} />
             <Route exact path='/Bikes' component={Bikes} />
-                <Route path='/AboutUs' component={ShowAboutUs} />
-                <Route path='/' component={ShowAboutUs} />
+            <Route path='/AboutUs' component={ShowAboutUs} />
             <Route path='/Loggain' component={Loggain} />
-            <Route path='/Skapakonto' component={Skapakonto} />
+          <Route path='/Skapakonto' component={Skapakonto} />
+          <Route path='/BookingConfirmation' component={BookingConfirmation} />
         </div>
         </Layout>
     );
