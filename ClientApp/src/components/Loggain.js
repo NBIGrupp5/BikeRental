@@ -14,7 +14,10 @@ export class Loggain extends Component {
                 <body><center><img src="https://www.xxl.se/content/images/d1eae533f3e0543c65a407afb2e320ad7f1256bf-1332x540.png?auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&w=1000&h=500"
                     width="400"
                     height="300" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 
                     <label for="uname"><b>Användarnamn</b></label>
                     <input type="text" placeholder="Skriv in användarnamn" name="uname" required></input>
@@ -26,6 +29,7 @@ export class Loggain extends Component {
                     <div>
                         <body><center><button type="submit">Logga in</button></center></body>
                         <div>
+<<<<<<< HEAD
                             <body><center>
                                 <br />
                                 <div class="psw">Glömt <a href="#">Lösenord?</a>
@@ -34,6 +38,8 @@ export class Loggain extends Component {
                                 <input type="checkbox" checked="checked" name="remember" /> Komma ihåg
                                     </center></body>
                                                         
+=======
+>>>>>>> main
                         </div>
                     </div>
                 </body>

@@ -10,6 +10,7 @@ import './custom.css'
 import { Skapakonto } from './components/Skapakonto';
 import { Loggain } from './components/Loggain';
 import { BookingConfirmation } from './components/BookingConfirmation';
+import contact from './components/contact';
 
 
 export default class App extends Component {
@@ -26,12 +27,13 @@ export default class App extends Component {
      <Layout>
       <div>                       
             <Route exact path='/BookingForm' component={BookingForm} />
-            <Route exact path='/' component={Bikes} />
-            <Route exact path='/Bikes' component={Bikes} />
+          <Route exact path='/Bikes' component={Bikes} />
+          <Route exact path='/' component={Bikes} />
             <Route path='/AboutUs' component={ShowAboutUs} />
             <Route path='/Loggain' component={Loggain} />
           <Route path='/Skapakonto' component={Skapakonto} />
-          <Route path='/BookingConfirmation' component={BookingConfirmation} />
+                <Route path='/BookingConfirmation' component={BookingConfirmation} />
+                <Route path='/Contact' component={contact} />
         </div>
         </Layout>
     );
