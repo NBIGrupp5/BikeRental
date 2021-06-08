@@ -12,8 +12,8 @@ const ShowAboutUs = function AboutUs() {
     <div>
       <Container fluid>
         <Row>
-            <div>
-                <h1 style={{ padding: "14px" }}>Om oss</h1>
+                  <div>
+                      <h1 style={{ padding: "14px" }} className="Omoss">Om oss</h1>
             </div>
         </Row>
         <Row>
