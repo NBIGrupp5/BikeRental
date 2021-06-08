@@ -30,7 +30,7 @@ export class Loggain extends Component {
 
                             <body><center>
                                 <br />
-                                <div class="psw">Glömt <a href="#">Lösenord?</a>
+                                <div className="psw">Glömt <a href="#">Lösenord?</a>
                                 </div>
                                 <br />
                                 <input type="checkbox" checked="checked" name="remember" /> Komma ihåg

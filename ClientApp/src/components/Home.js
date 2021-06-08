@@ -11,7 +11,7 @@ export class Home extends Component {
     render() {
       return (         
             <div>
-          <Container clasName="bookingcontainer">                 
+          <Container className="bookingcontainer">                 
                   <Image src={banner} fluid />    
               </Container>
           </div>                 
