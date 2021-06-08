@@ -7,11 +7,12 @@ const Footer = () => (
   
   <div className="footer">
 
-    <p>Come visit us!</p>
+    <p>Kolla in våra nöjda kunder!</p>
     <h1>
     <a href="https://www.instagram.com/schwarzenegger/">
         <FaInstagram /></a>
-      </h1>
+    </h1>
+    <br/>
   </div>
 );
 
