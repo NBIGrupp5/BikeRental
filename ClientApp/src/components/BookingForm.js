@@ -128,17 +128,8 @@ export class BookingForm extends Component {
                             <div>Skicka med ditt registrerade nummer till: </div>
                             <div><h3>0733 55 55 55</h3></div>
                             <br></br>
-                            <Accordion.Toggle className="paybox" eventKey="2">
-                              Swish
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="2">
-                              <div className="paycontent"> <p>Skicka din betalning med Swish. Du behöver Swish-appen och ett mobilt BandID för att använda det här betalsättet.</p>
-                                <div>Skicka med ditt registrerade nummer till: </div>
-                                <div><h3>0733 55 55 55</h3></div>
-                                <br></br>
-                                <input type="submit" value="Slutför bokning" class="btn"></input></div>
-                            </Accordion.Collapse>
-                          </div>
+                            <input type="submit" value="Slutför bokning" class="btn"></input></div>
+                            
                         </Accordion.Collapse>
                       </Accordion>
                     </div>
@@ -147,6 +138,13 @@ export class BookingForm extends Component {
                 </form>
               </div>
             </div>
+            <div class="col-25">
+              <div class="container">
+                <h4>Vald cykel <span className="price" style={{ color: "black" }}><i class="fa fa-shopping-cart"></i></span></h4>
+                <p><a href="#Bikes">{this.props.location.state.biketype.bikeTypeName}</a> <span class="price">{this.props.location.state.biketype.bikeTypePrice}SEK</span></p>
+                <p>Total <span className="price" style={{ color: "black" }}><b>{this.props.location.state.biketype.bikeTypePrice}SEK</b></span></p>
+              </div>
+              </div>
           </div>
         </body>
         </div>

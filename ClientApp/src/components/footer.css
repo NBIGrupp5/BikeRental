@@ -1,0 +1,15 @@
+﻿.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    clear: both;
+
+    position: relative; 
+    z-index: 1; 
+    height: -3em;
+    margin-top: 40em; 
+}
+
