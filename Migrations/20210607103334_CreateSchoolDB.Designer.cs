@@ -4,14 +4,16 @@ using BikeRental;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BikeRental.Migrations
 {
     [DbContext(typeof(BikeRentalContext))]
-    partial class BikeRentalContextModelSnapshot : ModelSnapshot
+    [Migration("20210607103334_CreateSchoolDB")]
+    partial class CreateSchoolDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,12 +75,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-
-
                         .HasDefaultValue(new DateTime(2021, 6, 7, 12, 33, 34, 111, DateTimeKind.Local).AddTicks(6146));
-
-                        .HasDefaultValue(new DateTime(2021, 6, 7, 11, 36, 24, 477, DateTimeKind.Local).AddTicks(7533));
-
 
                     b.HasKey("Id");
 
@@ -138,12 +135,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-
-
                         .HasDefaultValue(new DateTime(2021, 6, 7, 12, 33, 34, 125, DateTimeKind.Local).AddTicks(6175));
-
-                        .HasDefaultValue(new DateTime(2021, 6, 7, 11, 36, 24, 484, DateTimeKind.Local).AddTicks(8385));
-
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");

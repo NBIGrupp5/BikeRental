@@ -11,6 +11,9 @@ import { Skapakonto } from './components/Skapakonto';
 import { Loggain } from './components/Loggain';
 import { BookingConfirmation } from './components/BookingConfirmation';
 
+import contact from './components/contact';
+
+
 
 export default class App extends Component {
   static displayName = App.name;
@@ -31,7 +34,8 @@ export default class App extends Component {
             <Route path='/AboutUs' component={ShowAboutUs} />
             <Route path='/Loggain' component={Loggain} />
           <Route path='/Skapakonto' component={Skapakonto} />
-          <Route path='/BookingConfirmation' component={BookingConfirmation} />
+                <Route path='/BookingConfirmation' component={BookingConfirmation} />
+                <Route path='/Contact' component={contact} />
         </div>
         </Layout>
     );

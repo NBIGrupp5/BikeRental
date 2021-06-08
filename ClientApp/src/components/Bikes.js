@@ -42,18 +42,19 @@ export class Bikes extends Component {
               bikes.map(bike => {
                 const { id, bikeTypeName, bikeTypePrice, bikeTypeDescription, bikeTypeImage } = bike;
 
-                return (
-                  <CardColumns>
-                    <Card className='cardsize'>                      
-                    <Card.Img className="img2" variant="top" src={bikeTypeImage} />
+                  return (
+                      <CardColumns key={id}>
+                          <Card>
+                    <Card.Img variant="top" src={bikeTypeImage} />
+
                     <Card.Body>
                       <Card.Title>{bikeTypeName}</Card.Title>
                       <Card.Text>
                         {bikeTypeDescription}
                       </Card.Text>
-                      
-                      </Card.Body>
-                      <div className="price">Pris {bikeTypePrice} ;-</div>
+
+                      <div>pris {bikeTypePrice} ;-</div>
+                    </Card.Body>
                     <Card.Footer>
                       <Link className="btn btn-primary" to={{
                         pathname: "/BookingForm",
@@ -61,7 +62,9 @@ export class Bikes extends Component {
                       }}>Hyra</Link>
                     </Card.Footer>
                   </Card>
-                    </CardColumns>
+
+                </CardColumns>
+
                 );
               })
             )
