@@ -73,12 +73,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-
-
-                        .HasDefaultValue(new DateTime(2021, 6, 7, 12, 33, 34, 111, DateTimeKind.Local).AddTicks(6146));
-
-                        .HasDefaultValue(new DateTime(2021, 6, 7, 11, 36, 24, 477, DateTimeKind.Local).AddTicks(7533));
-
+                        .HasDefaultValue(new DateTime(2021, 6, 8, 19, 3, 13, 683, DateTimeKind.Local).AddTicks(2704));
 
                     b.HasKey("Id");
 
@@ -138,12 +133,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-
-
-                        .HasDefaultValue(new DateTime(2021, 6, 7, 12, 33, 34, 125, DateTimeKind.Local).AddTicks(6175));
-
-                        .HasDefaultValue(new DateTime(2021, 6, 7, 11, 36, 24, 484, DateTimeKind.Local).AddTicks(8385));
-
+                        .HasDefaultValue(new DateTime(2021, 6, 8, 19, 3, 13, 690, DateTimeKind.Local).AddTicks(6425));
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");

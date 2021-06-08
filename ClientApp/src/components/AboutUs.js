@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react';
+﻿import React from 'react';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
@@ -10,7 +10,7 @@ const ShowAboutUs = function AboutUs() {
   return (
 
     <div>
-      <Container fluid>
+      <Container className="bookingcontainer" fluid>
         <Row>
                   <div>
                       <h1 style={{ padding: "14px" }} className="Omoss">Om oss</h1>
