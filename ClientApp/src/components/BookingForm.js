@@ -146,6 +146,18 @@ export class BookingForm extends Component {
 
                 </form>
               </div>
+              <div class="col-25">
+                <div class="container">
+                  <h4>Vald cykel <span className="price" style={{ color: "black" }}><i class="fa fa-shopping-cart"></i></span></h4>
+                  <p><a href="#Bikes">{this.props.location.state.biketype.bikeTypeName}</a> <span class="price">{this.props.location.state.biketype.bikeTypePrice}SEK</span></p>
+                  <p>Total <span className="price" style={{ color: "black" }}><b>{this.props.location.state.biketype.bikeTypePrice}SEK</b></span></p>
+
+
+
+
+
+                </div>
+                </div>
             </div>
           </div>
         </body>
