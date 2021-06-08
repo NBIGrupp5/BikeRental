@@ -1,7 +1,4 @@
-﻿
-
-
-.card {
+﻿.card {
     height: 900px;
     max-height: 900px;
     max-width: 250px;
@@ -11,11 +8,6 @@
 .cardsize {
     height: 700px;
     width:250px;
-    
-    /*
-    max-height: 900px;
-    max-width: 250px;
-    min-width: 230px;*/
 }
 
 .card-body {

@@ -1,0 +1,35 @@
+﻿body {
+    box-sizing: border-box;
+}
+
+.body {
+    margin: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.h1 {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    font-family: 'Clear Sans', sans-serif;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px;
+}
+
+.left {
+    width: 35%;
+}
+
+.right {
+    width: 65%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

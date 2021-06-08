@@ -8,8 +8,6 @@ import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-//import history from './../history';
-
 export class Bikes extends Component {
 
 
@@ -41,9 +39,9 @@ export class Bikes extends Component {
             ? (
               bikes.map(bike => {
                 const { id, bikeTypeName, bikeTypePrice, bikeTypeDescription, bikeTypeImage } = bike;
-
-                return (
-                  <CardColumns>
+                  return (
+                   
+                      <CardColumns>
                     <Card className='cardsize'>                      
                     <Card.Img className="img2" variant="top" src={bikeTypeImage} />
                     <Card.Body>
