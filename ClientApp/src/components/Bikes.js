@@ -41,15 +41,18 @@ export class Bikes extends Component {
             ? (
               bikes.map(bike => {
                 const { id, bikeTypeName, bikeTypePrice, bikeTypeDescription, bikeTypeImage } = bike;
+
                   return (
                       <CardColumns key={id}>
                           <Card>
                     <Card.Img variant="top" src={bikeTypeImage} />
+
                     <Card.Body>
                       <Card.Title>{bikeTypeName}</Card.Title>
                       <Card.Text>
                         {bikeTypeDescription}
                       </Card.Text>
+
                       <div>pris {bikeTypePrice} ;-</div>
                     </Card.Body>
                     <Card.Footer>
@@ -59,7 +62,9 @@ export class Bikes extends Component {
                       }}>Hyra</Link>
                     </Card.Footer>
                   </Card>
+
                 </CardColumns>
+
                 );
               })
             )

@@ -10,7 +10,9 @@ import './custom.css'
 import { Skapakonto } from './components/Skapakonto';
 import { Loggain } from './components/Loggain';
 import { BookingConfirmation } from './components/BookingConfirmation';
+
 import contact from './components/contact';
+
 
 
 export default class App extends Component {

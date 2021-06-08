@@ -12,8 +12,8 @@ const ShowAboutUs = function AboutUs() {
     <div>
       <Container fluid>
         <Row>
-            <div>
-                <h1 style={{ padding: "14px" }}>Om oss</h1>
+                  <div>
+                      <h1 style={{ padding: "14px" }} className="Omoss">Om oss</h1>
             </div>
         </Row>
         <Row>
@@ -31,7 +31,7 @@ const ShowAboutUs = function AboutUs() {
           <Col>
             <p>
             <br/>
-                <a href="https://www.google.com/maps/place/NBI%2FHandelsakademin/@57.6730902,11.8811027,149m/data=!3m1!1e3!4m12!1m6!3m5!1s0x464f8ccc7cd3a295:0x6f2f1bcdd22f70e5!2sNBI%2FHandelsakademin!8m2!3d57.6731594!4d11.8813052!3m4!1s0x464f8ccc7cd3a295:0x6f2f1bcdd22f70e5!8m2!3d57.6731594!4d11.8813052">
+                <a className="gmaps-link" href="https://www.google.com/maps/place/NBI%2FHandelsakademin/@57.6730902,11.8811027,149m/data=!3m1!1e3!4m12!1m6!3m5!1s0x464f8ccc7cd3a295:0x6f2f1bcdd22f70e5!2sNBI%2FHandelsakademin!8m2!3d57.6731594!4d11.8813052!3m4!1s0x464f8ccc7cd3a295:0x6f2f1bcdd22f70e5!8m2!3d57.6731594!4d11.8813052">
                         <Image src="https://i.imgur.com/noA2VPk.png" alt="handelsakademin" fluid /></a>
             </p>
            </Col>
