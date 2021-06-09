@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BikeRental.Migrations
 {
     [DbContext(typeof(BikeRentalContext))]
-    [Migration("20210608170314_CreateDB")]
+    [Migration("20210609060903_CreateDB")]
     partial class CreateDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace BikeRental.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.6")
+                .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("BikeRental.Models.Bike", b =>
@@ -75,7 +75,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 6, 8, 19, 3, 13, 683, DateTimeKind.Local).AddTicks(2704));
+                        .HasDefaultValue(new DateTime(2021, 6, 9, 8, 9, 3, 205, DateTimeKind.Local).AddTicks(6135));
 
                     b.HasKey("Id");
 
@@ -135,7 +135,7 @@ namespace BikeRental.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 6, 8, 19, 3, 13, 690, DateTimeKind.Local).AddTicks(6425));
+                        .HasDefaultValue(new DateTime(2021, 6, 9, 8, 9, 3, 212, DateTimeKind.Local).AddTicks(7533));
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
