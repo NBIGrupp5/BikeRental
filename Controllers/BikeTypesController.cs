@@ -59,7 +59,7 @@ namespace BikeRental.Controllers
                 BikeTypeDescription = bikeTypeFromDb.BikeTypeDescription,
                 BikeTypeImage = bikeTypeFromDb.BikeTypeImage
             };
-            return Ok(bikeTypeResponse);
+            return Ok(bikeTypeResponse + $"Bike id = {Id}");
         }
 
         [HttpPost]
@@ -95,9 +95,10 @@ namespace BikeRental.Controllers
             {
                 return BadRequest($"Bike Type with Id = {Id} not found. Can not delete.");
             }
+
             _context.BikeTypes.Remove(typeToDelete);
             _context.SaveChanges();
-            return NoContent();
+            return Ok($"Bike type with Id= {Id} was deleted");
         }
     }
 }

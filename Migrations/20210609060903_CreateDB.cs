@@ -17,7 +17,7 @@ namespace BikeRental.Migrations
                     BikeTypePrice = table.Column<float>(type: "real", nullable: false),
                     BikeTypeDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BikeTypeImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 8, 19, 3, 13, 683, DateTimeKind.Local).AddTicks(2704))
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 9, 8, 9, 3, 205, DateTimeKind.Local).AddTicks(6135))
                 },
                 constraints: table =>
                 {
@@ -32,7 +32,7 @@ namespace BikeRental.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     BikeId = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 8, 19, 3, 13, 690, DateTimeKind.Local).AddTicks(6425))
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 6, 9, 8, 9, 3, 212, DateTimeKind.Local).AddTicks(7533))
                 },
                 constraints: table =>
                 {
