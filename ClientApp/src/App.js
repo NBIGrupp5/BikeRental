@@ -10,6 +10,10 @@ import './custom.css'
 import { Skapakonto } from './components/Skapakonto';
 import { Loggain } from './components/Loggain';
 import { BookingConfirmation } from './components/BookingConfirmation';
+import { LoginConfirmation } from './components/LoginConfirmation';
+import Footer from './components/footer'
+import contact from './components/contact';
+
 
 
 export default class App extends Component {
@@ -31,7 +35,10 @@ export default class App extends Component {
             <Route path='/AboutUs' component={ShowAboutUs} />
             <Route path='/Loggain' component={Loggain} />
           <Route path='/Skapakonto' component={Skapakonto} />
+          <Route path='/LoginConfirmation' component={LoginConfirmation} />
           <Route path='/BookingConfirmation' component={BookingConfirmation} />
+          <Route path='/Contact' component={contact} />
+          <Footer />
         </div>
         </Layout>
     );

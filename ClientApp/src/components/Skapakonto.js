@@ -11,7 +11,7 @@ export class Skapakonto extends Component {
                     <div id="id01" class="modal" />
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                     <form class="modal-content" action="/action_page.php" />
-                    <div class="container" />
+
                     <h1>Skapa Konto</h1>
                     <hr />
                     <label for="email"><b>Email</b></label><br />
@@ -24,9 +24,8 @@ export class Skapakonto extends Component {
                     <input type="password" placeholder="Skriv in lösenord" name="psw-repeat" required />
                     <br />
                     <label />
-                    <input type="checkbox" checked="checked" name="remember" style={{ bottom: "15px" }} /> Komma ihåg
                     <body>
-                        <label />
+                        <label/>
 
                         <p>Genom att skapa ett konto så accepterar du våra <a href="#" style={{ color: "dodgerblue" }}>Vilkor & Integritet</a>.</p>
 

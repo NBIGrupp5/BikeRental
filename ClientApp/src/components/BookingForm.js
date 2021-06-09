@@ -17,38 +17,22 @@ export class BookingForm extends Component {
     console.log(props)
     this.state = {
       biketype: props.location.state.biketype
-
     }
   }
-
-
-
   render() {
     return (
       <div>
         <body>
-
-
-
           <h2>Din bokning</h2>
-
-
-
           {/*<!-- Tid och datum för denna beställning -->*/}
           <p id="date"></p>
           <script>
             document.getElementById("date").innerHTML = Date();
 </script>
-
-
-
           <div class="row">
             <div class="col-75">
-              <div class="container">
+              <div class="bookingcontainer">
                 <form action="/action_page.php">
-
-
-
                   <div class="row">
                     <div class="col-50">
                       <h3>Dina uppgifter</h3>
@@ -65,18 +49,9 @@ export class BookingForm extends Component {
                       <label for="zip">Postnummer </label>
                       <input type="text" id="zip" name="zip" placeholder="xxx xx"></input>
                     </div>
-
-
-
-
-
                     <div class="col-50">
                       <h3>Betalsätt</h3>
                       <label for="fname">Våra betalningsalternativ</label>
-
-
-
-
                       <Accordion defaultActiveKey="0">
                         <Accordion.Toggle className="paybox" eventKey="0">
                           Kort
@@ -100,8 +75,7 @@ export class BookingForm extends Component {
                                 </div>
                               </div></p>
                             <Link to={{ pathname: 'BookingConfirmation' }}>
-                            <input type="submit" value="Slutför bokning" class="btn"></input></Link>
-
+                              <input type="submit" value="Slutför bokning" class="btn"></input></Link>
                           </div>
                         </Accordion.Collapse>
                         <br></br>
@@ -114,7 +88,10 @@ export class BookingForm extends Component {
 
 
 
+
+
                             <br></br>
+
 
 
 
@@ -122,9 +99,6 @@ export class BookingForm extends Component {
                               <input type="submit" value="Slutför bokning" className="btn"></input></Link>
                           </div>
                         </Accordion.Collapse>
-
-
-
                         <Accordion.Toggle className="paybox" eventKey="2">
                           Swish
 </Accordion.Toggle>
@@ -134,10 +108,12 @@ export class BookingForm extends Component {
                             <div><h3>0733 55 55 55</h3></div>
                             <br></br>
                             <Link to={{ pathname: 'BookingConfirmation' }}>
-                            <input type="submit" value="Slutför bokning" className="btn"></input></Link>
+                              <input type="submit" value="Slutför bokning" className="btn"></input></Link>
                           </div>
                         </Accordion.Collapse>
                       </Accordion>
+
+
 
 
 
@@ -146,29 +122,22 @@ export class BookingForm extends Component {
 
 
 
+
+
                 </form>
               </div>
             </div>
             <div class="col-25">
-              <div class="container">
+              <div class="bookingcontainer">
                 <h4>Vald cykel <span className="price" style={{ color: "black" }}><i class="fa fa-shopping-cart"></i></span></h4>
                 <p><a href="#Bikes">{this.props.location.state.biketype.bikeTypeName}</a> <span class="price">{this.props.location.state.biketype.bikeTypePrice}SEK</span></p>
                 <p>Total <span className="price" style={{ color: "black" }}><b>{this.props.location.state.biketype.bikeTypePrice}SEK</b></span></p>
-
-
-
               </div>
             </div>
           </div>
-
-
-
         </body>
       </div>
     ); {/*);*/ }
-
-
-
   }
 }
 export default BookingForm;

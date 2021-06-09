@@ -12,7 +12,7 @@ export class BookingConfirmation extends Component {
         
         <div>
           <div className="a">Tack för din bokning!</div>
-Du kommer få en bokningsbekräftelse till mejladressen du angivit du angivit
+          Du kommer få en bokningsbekräftelse till mejladressen du angivit du angivit inom 5 minuter.
 
 
         </div>

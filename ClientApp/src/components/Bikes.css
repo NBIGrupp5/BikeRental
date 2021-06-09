@@ -2,14 +2,14 @@
 
 
 .card {
-    height: 900px;
+    height: 700px;
     max-height: 900px;
     max-width: 250px;
     min-width: 230px;
 }
 
 .cardsize {
-    height: 700px;
+    height: 500px;
     width:250px;
     
     /*
@@ -23,9 +23,6 @@
     width: 228px;
 }
 
-.card-footer {
-
-}
 .img2 {
     height: 330px;
     width: 228px;
