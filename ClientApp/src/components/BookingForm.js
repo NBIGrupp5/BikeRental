@@ -4,8 +4,12 @@ import Accordion from 'react-bootstrap/Accordion'
 import { Link } from 'react-router-dom';
 
 
+
+
 export class BookingForm extends Component {
   static displayName = BookingForm.name;
+
+
 
 
   constructor(props) {
@@ -84,7 +88,11 @@ export class BookingForm extends Component {
 
 
 
+
+
                             <br></br>
+
+
 
 
                             <Link to={{ pathname: 'BookingConfirmation' }}>
@@ -107,8 +115,12 @@ export class BookingForm extends Component {
 
 
 
+
+
                     </div>
                   </div>
+
+
 
 
 
