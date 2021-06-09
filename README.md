@@ -1,7 +1,7 @@
-CarRental
+BikeRental
 
     About the project
-        This poject is a car rental website that allows you to save cars into a database.
+        This poject is a Bike rental website that allows you to rent a bicycle.
 
     Prerequisites
         npm install
