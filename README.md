@@ -1,4 +1,4 @@
-CarRental
+BikeRental
 
     About the project
         This poject is a car rental website that allows you to save cars into a database.
